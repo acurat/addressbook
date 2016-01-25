@@ -13,6 +13,7 @@ Address Book is a place to store contacts
   <li>Spring MVC for REST endpoints
   <li>JPA/Hiberate as ORM framework 
   <li>Spring framework
+  <li>JUNIT
 </ul>
   
 <b>Database: </b> 
