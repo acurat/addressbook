@@ -1,5 +1,7 @@
 # addressbook
-Address Book is a place to store contacts
+Address Book is a place to store contacts.
+
+Built using the following:
 
 
 <b>Frontend:</b> 
