@@ -34,9 +34,9 @@
    </bean> 
    
    <!-- Data source: defined in the jee container -->
-   <jee:jndi-lookup id="dataSource" jndi-name="java:/jdbc/addressbook" expected-type="javax.sql.DataSource"/>
+   <jee:jndi-lookup id="dataSource" jndi-name="jdbc/addressbook" expected-type="javax.sql.DataSource"/>
    
-   <!-- If JNDI is not available, add database details below -->
+   <!-- If JNDI is not available, add database details directly below -->
    <!--  
    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
