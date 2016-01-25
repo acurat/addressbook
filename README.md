@@ -3,26 +3,37 @@ Address Book is a place to store contacts
 
 
 Frontend: 
-  Angularjs for mv* framework
-  Bootstrap for CSS components
+<ul>
+  <li>Angularjs for mv* framework
+  <li>Bootstrap for CSS components
+</ul>
 
-Backend: 
-  Spring MVC for REST endpoints
-  JPA/Hiberate as ORM framework 
-  Spring framework
+Backend:
+<ul>
+  <li>Spring MVC for REST endpoints
+  <li>JPA/Hiberate as ORM framework 
+  <li>Spring framework
+</ul>
   
 Database: 
-  SQL Server 2012
+<ul>
+  <li>SQL Server 2012
+</ul>
 
-IDE used: 
-  Eclipse
-  Sql Developer
+IDE used:
+<ul>
+  <li>Eclipse
+  <li>Sql Developer
   
 HTTP server:
-  Tomcat 7.0.67
+<ul>
+  <li>Tomcat 7.0.67
+</ul>
   
 Build tool:
-  Maven
+<ul>
+ <li> Maven
+</ul>
 
 
 
