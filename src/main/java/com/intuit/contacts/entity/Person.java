@@ -25,7 +25,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 @Entity
 @NamedQueries({ @NamedQuery(name = "Person.findAll", query = "SELECT p FROM Person p"),
 		@NamedQuery(name = "Person.findAllNames", query = "SELECT p.id, p.lastName, p.firstName, ph.number FROM Person as p "
-				+ "INNER JOIN p.phones as ph WHERE ph.primaryPhone = 1 ORDER BY p.lastName") })
+				+ "INNER JOIN p.phones as ph WHERE ph.primaryPhone = 1 ORDER BY p.firstName, p.lastName") })
 public class Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 
