@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee.xsd">
+        
+    <!-- Entity Manager Factory -->    
+    <bean id="myEmf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    
+      <property name="dataSource" ref="dataSource" />
+      
+	  <property name="packagesToScan" value="com.intuit.contacts.entity" />
+
+      <property name="jpaVendorAdapter" ref="jpaVendorAdapter" /> 
+      
+      <property name="jpaDialect" ref="jpaDialect" /> 
+ 
+   </bean>   
+   
+   <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>   
+   
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="database" value="SQL_SERVER" />
+   </bean> 
+   
+   <!-- Data source: defined in the jee container -->
+   <jee:jndi-lookup id="dataSource" jndi-name="java:/jdbc/addressbook" expected-type="javax.sql.DataSource"/>
+   
+   <!-- If JNDI is not available, add database details below -->
+   <!--  
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+      <property name="url" value="" />
+      <property name="username" value="" />
+      <property name="password" value="" />
+   </bean>   
+   -->
+      
+   <!-- Convert from database specific to generic spring exceptions -->
+   <bean id="persistenceExceptionTranslationPostProcessor"
+      class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+ 
+
+</beans>

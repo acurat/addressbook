@@ -1,0 +1,113 @@
+<!-- HTML for adding or editing a contact -->
+
+<div data-ng-if="!edit">
+	<h3>Add New Contact</h3>
+</div>
+<div data-ng-if="edit">
+	<h3>Edit Contact</h3>
+</div>
+
+<div data-ng-if="error == true" class="alert alert-danger" role="alert">Unexpected
+	error occurred. Please try again.</div>
+
+<form name="form" data-ng-submit="submit()" novalidate>
+
+	<div class="form-group">
+		<label for="firstName">First Name</label> <input type="text"
+			class="form-control" name="firstName"
+			data-ng-model="contact.firstName" placeholder="First Name" required
+			data-ng-maxlength=50> <span class="help-block error-message"
+			data-ng-show="(form.firstName.$dirty || submitted) && form.firstName.$error.required">
+			First Name is required. </span> <span class="help-block error-message"
+			data-ng-show="form.firstName.$error.maxlength"> First Name is
+			too long.</span>
+	</div>
+
+	<div class="form-group">
+		<label for="lastName">Last Name</label> <input type="text"
+			class="form-control" name="lastName" data-ng-model="contact.lastName"
+			placeholder="Last Name" required data-ng-maxlength=50> <span
+			class="help-block error-message"
+			data-ng-show="(form.lastName.$dirty || submitted) && form.lastName.$error.required">
+			Last Name is required. </span> <span class="help-block error-message"
+			data-ng-show="form.lastName.$error.maxlength"> Last Name is
+			too long.</span>
+	</div>
+	<br>
+	<div class="form-group">
+		<label for="phone">Phone</label> <input type="text" name="phone"
+			class="form-control" data-ng-model="contact.phone.number"
+			placeholder="Phone" required data-ng-maxlength=20> <span
+			class="help-block error-message"
+			data-ng-show="(form.phone.$dirty || submitted) && form.phone.$error.required">
+			Phone number is required. </span> <span class="help-block error-message"
+			data-ng-show="form.phone.$error.maxlength">Phone number cannot
+			exceed 20 digits.</span>
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email</label> <input name="email" type="email"
+			class="form-control" placeholder="Email" name="email"
+			data-ng-model="contact.email.address" data-ng-maxlength=50> <span
+			data-ng-show="form.email.$invalid && !form.email.$pristine"
+			class="help-block error-message">Enter a valid email.</span> <span
+			class="help-block error-message"
+			data-ng-show="form.email.$error.maxlength">Email Address
+			cannot exceed 50 characters.</span>
+	</div>
+	<br>
+	<div class="form-group">
+		<label for="address1">Address 1</label> <input type="text"
+			class="form-control" name="address1" placeholder="Address"
+			data-ng-model="contact.address.address1" data-ng-maxlength=25>
+		<span class="help-block error-message"
+			data-ng-show="form.address1.$error.maxlength">Cannot exceed 50
+			characters.</span>
+	</div>
+	<div class="form-group">
+		<label for="address2">Address 2</label> <input type="text"
+			class="form-control" name="address2" placeholder="Apt or Suite #"
+			data-ng-model="contact.address.address2" data-ng-maxlength=25>
+		<span class="help-block error-message"
+			data-ng-show="form.address2.$error.maxlength">Cannot exceed 50
+			characters.</span>
+	</div>
+	<div class="form-group">
+		<label for="city">City</label> <input type="text" class="form-control"
+			name="city" placeholder="City" data-ng-model="contact.address.city"
+			data-ng-maxlength=15> <span class="help-block error-message"
+			data-ng-show="form.city.$error.maxlength">City cannot exceed
+			50 characters.</span>
+	</div>
+	<div class="form-group">
+		<label for="state">State</label> <input type="text"
+			class="form-control" name="state" placeholder="State"
+			data-ng-model="contact.address.state" data-ng-maxlength=20> <span
+			class="help-block error-message"
+			data-ng-show="form.state.$error.maxlength">State cannot exceed
+			50 characters.</span>
+
+	</div>
+	<div class="form-group">
+		<label for="country">Country</label> <input type="text"
+			class="form-control" name="country" placeholder="Country"
+			data-ng-model="contact.address.country" data-ng-maxlength=20><span
+			class="help-block error-message"
+			data-ng-show="form.country.$error.maxlength">Country cannot
+			exceed 50 characters.</span>
+	</div>
+	<div class="form-group">
+		<label for="zip">Zip</label> <input type="text" class="form-control"
+			name="zip" placeholder="Zip" data-ng-model="contact.address.zip"
+			data-ng-maxlength=10> <span class="help-block error-message"
+			data-ng-show="form.zip.$error.maxlength">Zip cannot exceed 10
+			digits.</span>
+	</div>
+
+	<div class="button-group">
+		<button type="submit" class="btn btn-primary"
+			data-ng-disabled="form.$invalid">Save</button>
+		<button type="button" class="btn btn-primary" data-ng-click="cancel()">Cancel</button>
+	</div>
+
+</form>
