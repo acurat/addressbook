@@ -1,5 +1,7 @@
 # addressbook
-Address Book is a place to store contacts
+Address Book is a place to store contacts.
+
+Built using the following:
 
 
 <b>Frontend:</b> 
@@ -13,6 +15,7 @@ Address Book is a place to store contacts
   <li>Spring MVC for REST endpoints
   <li>JPA/Hiberate as ORM framework 
   <li>Spring framework
+  <li>JUNIT
 </ul>
   
 <b>Database: </b> 
