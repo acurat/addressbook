@@ -12,7 +12,7 @@
 	<div class="col-md-6">
 		<div class="control-group">
 			<button type="button" class="btn btn-primary pull-right"
-				data-ng-click="addContact()">Add Contact</button>
+				data-ng-click="#/contact/add">Add Contact</button>
 		</div>
 	</div>
 </div>
@@ -26,7 +26,7 @@
 	</tr>
 	<tr data-ng-repeat="contact in contacts track by contact.contactId"
 		data-ng-click="getContact(contact.contactId)">
-		<td>{{contact.lastName}}, {{contact.firstName}}</td>
+		<td>{{contact.firstName}} {{contact.lastName}}</td>
 		<td>{{contact.phoneNumber}}</td>
 	</tr>
 </table>

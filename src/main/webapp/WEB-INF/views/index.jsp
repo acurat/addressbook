@@ -3,14 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<base href="${pageContext.request.contextPath}/">
-	<title>My Contacts</title>
+	<title>Address Book</title>
 	
-	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/lib/bootstrap.min.css">
-	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+	<link rel="stylesheet"
+		href="https://s3.amazonaws.com/arjuncurat/addressbook/css/main.css">
 </head>
 <body>
 
-	
+
 	<div class="container">
 
 		<div class="row">
@@ -23,25 +26,27 @@
 				<br>
 			</div>
 		</div>
-		
+
 	</div>
-	
+
 	<footer class="footer">
-      <div class="container">
-        <p class="text-muted">Demo for Intuit</p>
-      </div>
-    </footer>
+		<div class="container">
+			<p class="text-muted">Free to copy and distribute</p>
+		</div>
+	</footer>
 
-
-	<!--  static resources -->
-	<!--  ideally better if served from a CDN or AWS S3 -->
-	
-	<script src="${pageContext.request.contextPath}/resources/js/lib/angular.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/lib/angular-resource.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/lib/angular-route.min.js"></script>	
-	<script src="${pageContext.request.contextPath}/resources/js/application.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/controller.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/service.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+	<script
+		src="https://s3.amazonaws.com/arjuncurat/addressbook/js/application.js"></script>
+	<script
+		src="https://s3.amazonaws.com/arjuncurat/addressbook/js/controller.js"></script>
+	<script
+		src="https://s3.amazonaws.com/arjuncurat/addressbook/js/service.js"></script>
 
 </body>
 </html>

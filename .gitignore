@@ -61,5 +61,6 @@ pom.xml.releaseBackup
 .settings
 .project
 .classpath
+node_modules
 
 

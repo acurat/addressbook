@@ -20,17 +20,18 @@ addressBook.controller('AllContactsController', [ '$scope', '$location',
 			}, function() {
 				$scope.message = "Oops something went wrong!";
 			});
-
+/*
 			$scope.addContact = function() {
-				$location.path("/contact/add")
+				$location.path("/contact/add");
 			};
-
+*/
 			$scope.getContact = function(id) {
 				$location.path("/contact/" + id);
 			};
 		} ]);
 
 /*Controller for the adding or editing a contact view */
+
 
 addressBook.controller('AddEditContactController', [
 		'$scope',
@@ -52,7 +53,7 @@ addressBook.controller('AddEditContactController', [
 				$scope.edit = true;
 				storedContact = Store.getContact();
 
-				if (storedContact != null) {
+				if (storedContact !== null) {
 					$scope.contact = GenericFunctions
 							.convertToDisplay(storedContact);
 				} else {
@@ -87,7 +88,7 @@ addressBook.controller('AddEditContactController', [
 						$scope.error = true;
 					});
 				}
-			}
+			};
 
 			$scope.cancel = function() {
 				$location.path("/contacts");
@@ -108,7 +109,7 @@ addressBook.controller('GetContactController', [
 		'GenericFunctions',
 		function($scope, $location, $routeParams, $rootScope, Contact, Store,
 				GenericFunctions) {
-
+/*
 			$scope.back = function() {
 				$location.path("/contacts");
 			};
@@ -116,7 +117,7 @@ addressBook.controller('GetContactController', [
 			$scope.edit = function() {
 				$location.path('/contact/edit/' + $scope.contact.contactId);
 			};
-
+*/
 			var contact = Contact.get({
 				id : $routeParams.id
 			}, function() {
@@ -127,7 +128,7 @@ addressBook.controller('GetContactController', [
 			});
 
 			$scope.$on("$destroy", function() {
-				$rootScope.success = false;
-				$rootScope.message = "";
+				delete $rootScope.success;
+				delete $rootScope.message
 			});
 		} ]);

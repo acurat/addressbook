@@ -19,7 +19,7 @@
     
       <property name="dataSource" ref="dataSource" />
       
-	  <property name="packagesToScan" value="com.intuit.contacts.entity" />
+	  <property name="packagesToScan" value="org.me.contacts.entity" />
 
       <property name="jpaVendorAdapter" ref="jpaVendorAdapter" /> 
       
